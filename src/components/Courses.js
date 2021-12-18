@@ -6,11 +6,17 @@ const Courses = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <Container>
-        <Row>
+      <Container className="text-center">
+        <Row className="mt-3 mb-3 d-flex justify-content-center">
           {data.map((course) => {
             return (
-              <Col xs={12} md={6} lg={4}>
+              <Col
+                className=" d-flex  justify-content-center h-25"
+                key={course.id}
+                xs={12}
+                md={6}
+                lg={4}
+              >
                 <MyCard course={course} />
               </Col>
             );
