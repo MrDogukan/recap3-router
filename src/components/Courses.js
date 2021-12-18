@@ -1,9 +1,22 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import MyCard from "./MyCard";
 
-const Courses = () => {
+const Courses = ({ data }) => {
+  console.log(data);
   return (
     <div>
-      <h1>Courses</h1>
+      <Container>
+        <Row>
+          {data.map((course) => {
+            return (
+              <Col xs={12} md={6} lg={4}>
+                <MyCard course={course} />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
